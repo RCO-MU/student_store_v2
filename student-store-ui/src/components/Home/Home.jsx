@@ -6,7 +6,7 @@ import ProductGrid from '../ProductGrid/ProductGrid';
 
 export default function Home({
   products, shoppingCart, query, category, handleAddItemToCart,
-  handleRemoveItemFromCart, handleQueryChange, handleSearch,
+  handleRemoveItemFromCart, handleQueryChange, handleCategoryChange,
 }) {
   return (
     <div className="home">
@@ -19,13 +19,24 @@ export default function Home({
         onChange={(e) => handleQueryChange(e.target.value)}
         value={query}
       />
-      <button className="search-button" onClick={handleSearch} type="button">
+      <button className="search-button" type="button">
         <img
           className="search-icon"
           src="https://i.imgur.com/Q0cXzWQ.png"
           alt="search button"
         />
       </button>
+      <select
+        name="categories"
+        id="categories"
+        onChange={(e) => handleCategoryChange(e.target.value)}
+      >
+        <option value="all">All Categories</option>
+        <option value="clothing">Clothing</option>
+        <option value="food">Food</option>
+        <option value="accessories">Accessories</option>
+        <option value="tech">Tech</option>
+      </select>
       <ProductGrid
         products={products}
         query={query}
