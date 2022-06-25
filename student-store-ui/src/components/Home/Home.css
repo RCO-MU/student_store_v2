@@ -7,8 +7,8 @@
 
 .product-query {
   position: relative;
-  margin-left: 20px;
-  top:14px;
+  margin-left: max(20px, calc(8% - 50px));
+  top:20px;
   font-size: x-large;
   height: 40px;
   padding-left: 5px;
@@ -23,7 +23,7 @@
   margin: 0;
   border: 0px solid rgba(0,0,0,0);
   color: rgba(0,0,0,0);
-  top:10px;
+  top:16px;
 }
 
 .search-icon {
@@ -40,7 +40,7 @@
   width: 300px;
   padding-left: 5px;
   font-size: x-large;
-  top:13px;
+  top:19px;
 }
 
 #categories:hover {
