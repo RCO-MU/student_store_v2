@@ -29,7 +29,7 @@
   margin-right: 110px;
 }
 
-.amt-in-cart {
+.product-quantity {
   background-color: rgb(245, 181, 102);
   position: relative;
   margin-left: 100%;
@@ -41,7 +41,7 @@
   font-weight: bolder;
 }
 
-.amt-in-cart.detail {
+.product-quantity.detail {
   font-size: x-large;
   margin:auto;
   max-width: 10px;
@@ -50,7 +50,7 @@
   top: 10px;
 }
 
-.amt-in-cart.hidden {
+.product-quantity.hidden {
   background-color: rgba(0, 0, 0, .0);
   color: rgba(0, 0, 0, .0);
 }
@@ -117,29 +117,29 @@ button:focus:not(:focus-visible):not(.focus-visible) {
   outline: none;
 }
 
-.add-item {
+.add {
   background-color: #2ea44f;
 }
 
-.add-item.detail {
+.add.detail {
   margin-left: 45%;
   left:-80px;
 }
 
-.add-item:hover {
+.add:hover {
   background-color: #207e3b;
 }
 
-.remove-item {
+.remove {
   background-color: #d02424;
 } 
 
-.remove-item.detail {
+.remove.detail {
   position: relative;
   right:75px;
 } 
 
-.remove-item:hover {
+.remove:hover {
   background-color: #a42323;
 } 
 

@@ -10,3 +10,17 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.loading {
+  position: fixed;
+  top: 45%;
+  left: 50.9%;
+  transform: translate(-50%, -50%);
+}
+
+.notification {
+  color:white;
+  font-weight: bold;
+  font-size: x-large;
+  overflow-wrap: break-word;
+}

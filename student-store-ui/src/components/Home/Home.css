@@ -26,7 +26,7 @@
   color: rgba(0,0,0,0);
   top:16px;
   position: relative;
-  left: max(calc(50% - 760px), 0px)
+  left: max(calc(50% - 760px), -10px)
 }
 
 .search-icon {
@@ -36,14 +36,14 @@
 
 #categories {
   position: relative;
-  margin-left: 30px;
+  margin-left: 40px;
   margin-bottom: 20px;
   height: 40px;
   width: 300px;
   padding-left: 5px;
   font-size: x-large;
   top:20px;
-  left: max(calc(50% - 760px), 0px)
+  left: max(calc(50% - 760px), -10px)
 }
 
 #categories:hover {

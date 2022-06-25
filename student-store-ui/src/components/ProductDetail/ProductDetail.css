@@ -4,12 +4,5 @@
   overflow: hidden;
   margin-left:100px;
   margin-top: 130px;
-    /* background-image: url("https://i.imgur.com/kXEcLHM.jpg"); */
+  /* background-image: url("https://i.imgur.com/kXEcLHM.jpg"); */
   }
-  
-.loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}

@@ -44,3 +44,10 @@
     left: 5px;
   }
 }
+
+.no-items {
+  position: relative;
+  margin: 40px;
+  left: max(calc(50% - 760px), -10px);
+  font-size: 30px;
+}

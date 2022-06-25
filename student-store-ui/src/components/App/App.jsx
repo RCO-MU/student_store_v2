@@ -4,12 +4,14 @@
 import * as React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import validator from 'validator';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
 import ProductDetail from '../ProductDetail/ProductDetail';
 import NotFound from '../NotFound/NotFound';
+import { API_URL } from '../../constants';
 import './App.css';
 
 export default function App() {
@@ -17,7 +19,7 @@ export default function App() {
   // CONSTANTS
   // **********************************************************************
 
-  const URL = 'https://codepath-store-api.herokuapp.com/store';
+  const navigate = useNavigate();
 
   // **********************************************************************
   // STATE VARIABLES AND FUNCTIONS
@@ -32,6 +34,7 @@ export default function App() {
   const [category, setCategory] = useState('all');
   const [query, setQuery] = useState('');
   const [purchaseCompleted, setPurchaseCompleted] = useState(false);
+  const [purchaseInfo, setPurchaseInfo] = useState({});
 
   // **********************************************************************
   // AXIOS GET AND POST FUNCTIONS
@@ -40,7 +43,7 @@ export default function App() {
   async function fetchAllProductData() {
     setIsFetching(true);
     try {
-      const { data } = await axios(URL);
+      const { data } = await axios(API_URL);
       console.log('productData ', data);
       setProducts(data.products);
       setError('');
@@ -55,19 +58,28 @@ export default function App() {
   async function sendPostRequest(body) {
     setIsFetching(true);
     try {
-      const resp = await axios.post(URL, body);
+      const resp = await axios.post(API_URL, body);
       console.log(resp.data);
+      setPurchaseInfo(resp.data.purchase);
       setError('');
+      setShoppingCart([]);
+      setCheckoutForm({ name: '', email: '' });
+      setPurchaseCompleted(true);
+      setQuery('');
+      setCategory('all');
+      navigate('/');
     } catch (err) {
       console.error(err);
       setError(err);
+      setPurchaseCompleted(true);
+      navigate('/');
     } finally {
       setIsFetching(false);
     }
   }
 
   // **********************************************************************
-  // HANDLER FUNCTIONS (5)
+  // HANDLER FUNCTIONS (8)
   // **********************************************************************
 
   // toggles sidebar
@@ -94,7 +106,6 @@ export default function App() {
   };
 
   const handleRemoveItemFromCart = (productId) => {
-    console.log('hi');
     const productIndex = shoppingCart.findIndex((product) => product.itemId === productId);
     // if product is in cart
     if (productIndex !== -1) {
@@ -117,7 +128,7 @@ export default function App() {
     setCheckoutForm(newCheckoutForm);
   };
 
-  const handleOnSubmitCheckoutForm = () => {
+  const handleOnSubmitCheckoutForm = async () => {
     if (shoppingCart.length === 0) {
       setError('empty cart');
       return 400;
@@ -130,21 +141,16 @@ export default function App() {
       setError('empty name');
       return 400;
     }
-
-    try {
-      const checkoutRequestObj = {
-        user: checkoutForm,
-        shoppingCart,
-      };
-      sendPostRequest(checkoutRequestObj);
-    } catch (err) {
-      console.error(err);
-      setError(err);
-    } finally {
-      setShoppingCart([]);
-      setCheckoutForm({ name: '', email: '' });
-      setPurchaseCompleted(true);
+    if (!validator.isEmail(checkoutForm.email)) {
+      setError('invalid email');
+      return 400;
     }
+
+    const checkoutRequestBody = {
+      user: checkoutForm,
+      shoppingCart,
+    };
+    await sendPostRequest(checkoutRequestBody);
     return 200;
   };
 
@@ -154,6 +160,11 @@ export default function App() {
 
   const handleCategoryChange = (categoryString) => {
     setCategory(categoryString);
+  };
+
+  const handleTryAgain = () => {
+    setPurchaseCompleted(false);
+    setError('');
   };
 
   // **********************************************************************
@@ -176,12 +187,15 @@ export default function App() {
           shoppingCart={shoppingCart}
           checkoutForm={checkoutForm}
           error={error}
+          isFetching={isFetching}
           purchaseCompleted={purchaseCompleted}
+          purchaseInfo={purchaseInfo}
           handleOnToggle={handleOnToggle}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemFromCart={handleRemoveItemFromCart}
+          handleTryAgain={handleTryAgain}
         />
         <Navbar />
         <div
@@ -197,6 +211,7 @@ export default function App() {
                 query={query}
                 category={category}
                 shoppingCart={shoppingCart}
+                isFetching={isFetching}
                 handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
                 handleQueryChange={handleQueryChange}
@@ -221,7 +236,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <footer>
-          Footer
+          <p>This is where the footer info goes</p>
         </footer>
       </main>
     </div>

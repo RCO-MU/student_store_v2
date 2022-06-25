@@ -7,22 +7,12 @@ import { useParams } from 'react-router-dom';
 import './ProductDetail.css';
 import ProductView from '../ProductView/ProductView';
 import NotFound from '../NotFound/NotFound';
-
-// helper function; determines if product ID is valid
-function productIDisValid(productId) {
-  return productId > 0 && productId <= 16;
-}
+import { API_URL } from '../../constants';
 
 export default function ProductDetail({
   shoppingCart, handleAddItemToCart, handleRemoveItemFromCart,
-  isFetching, setIsFetching, setError, error,
+  isFetching, setIsFetching, setError,
 }) {
-  // **********************************************************************
-  // CONSTANTS
-  // **********************************************************************
-
-  const URL = 'https://codepath-store-api.herokuapp.com/store';
-
   // **********************************************************************
   // STATE VARIABLES AND FUNCTIONS
   // **********************************************************************
@@ -42,21 +32,15 @@ export default function ProductDetail({
   async function fetchProduct(id) {
     setIsFetching(true);
     try {
-      if (productIDisValid(id)) {
-        const { data } = await axios(`${URL}/${id}`);
-        console.log('Product ', data);
-        setProduct(data.product);
-        setError('');
-      } else {
-        setProduct({});
-        setError('Invalid ID');
-      }
+      const { data } = await axios(`${API_URL}/${id}`);
+      console.log('Product ', data);
+      setProduct(data.product);
+      setError('');
     } catch (err) {
       console.error(err);
-      setError(err);
-    } finally {
-      setIsFetching(false);
+      setError('invalid ID');
     }
+    setIsFetching(false);
   }
 
   // **********************************************************************
@@ -71,12 +55,12 @@ export default function ProductDetail({
   // PAGE RENDERING
   // **********************************************************************
 
-  // loading screen
+  // loading
   if (isFetching) {
     return (<h1 className="loading">Loading...</h1>);
   }
-  // if product search does/will not succeed
-  if (error !== '' || !productIDisValid(productId)) {
+  // if product search does not succeed (product is not populated)
+  if (Object.keys(product).length === 0) {
     return (<NotFound />);
   }
   return (

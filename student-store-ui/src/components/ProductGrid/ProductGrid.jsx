@@ -4,13 +4,38 @@ import './ProductGrid.css';
 import ProductCard from '../ProductCard/ProductCard';
 
 export default function ProductGrid({
-  products, query, category, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart,
+  products, query, category, isFetching, handleAddItemToCart,
+  handleRemoveItemFromCart, shoppingCart,
 }) {
+  // **********************************************************************
+  // CONSTANTS
+  // **********************************************************************
+
+  const noItemsMessage = "Sorry, we couldn't find what you were looking for.";
+
+  // **********************************************************************
+  // ELEMENT RENDERING
+  // **********************************************************************
+
+  // loading
+  if (isFetching) {
+    return (<h1 className="loading">Loading...</h1>);
+  }
+
+  // activeProducts = products that match filter conditions
   const activeProducts = products.filter((product) => (
     product.name.toLowerCase().includes(query.toLowerCase())
     && (product.category === category || category === 'all')
   ));
 
+  // if no products match the filter conditions
+  if (activeProducts.length === 0) {
+    return (
+      <h3 className="no-items">{noItemsMessage}</h3>
+    );
+  }
+
+  // else render the active products
   return (
     <div className="product-grid">
       {activeProducts.map((product) => (

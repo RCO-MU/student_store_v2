@@ -4,15 +4,22 @@ import * as React from 'react';
 import formatPrice from '../currency';
 import './ShoppingCart.css';
 
-// constant, tax rate
+// **********************************************************************
+// CONSTANTS
+// **********************************************************************
+
 const taxRate = 0.0875;
 
-// helper function; gets info of specific product given id and products list
+// **********************************************************************
+// HELPER FUNCTION(S)
+// **********************************************************************
+
+// gets info of specific product given id and products list
 function getProductFromProducts(productId, products) {
   return products.find((product) => product.id === productId);
 }
 
-// helper function; calculates total price of shopping cart
+// calculates total price (and other info) of shopping cart
 function calculateTotal(shoppingCart, products) {
   let sum = 0;
   let totalItems = 0;
@@ -31,25 +38,28 @@ function calculateTotal(shoppingCart, products) {
   };
 }
 
+// **********************************************************************
+// ELEMENT RENDERING
+// **********************************************************************
+
 export default function ShoppingCart({
   isOpen, products, shoppingCart, purchaseCompleted,
   handleAddItemToCart, handleRemoveItemFromCart,
 }) {
-  // if sidebar is open
+  // only render material if sidebar is open
   if (isOpen) {
-    // if a purchase was recently completed
+    // if a purchase was just completed, don't display the shopping cart
     if (purchaseCompleted) {
       return null;
     }
-
-    // if no items in shopping cart
+    // if no items are in the shopping cart
     if (shoppingCart.length === 0) {
       return (
-        <h1 className="notification">No items added to cart yet. Start shopping now!</h1>
+        <p className="notification">No items added to cart yet. Start shopping now!</p>
       );
     }
     const priceInfo = calculateTotal(shoppingCart, products);
-    // else, shopping cart has items to render
+    // otherwise, render the items in the shopping cart with price info
     return (
       <div className="shopping-cart">
         <table className="cart-breakdown">

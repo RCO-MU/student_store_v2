@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 import formatPrice from '../currency';
 import './ProductCard.css';
 
-// helper function; get quantity of specific product in cart
+// **********************************************************************
+// HELPER FUNCTION(S)
+// **********************************************************************
+
+// get quantity of specific product in cart
 function getProductQuantity(shoppingCart, productId) {
   const productIndex = shoppingCart.findIndex((product) => product.itemId === productId);
   if (productIndex !== -1) return shoppingCart[productIndex].quantity;
@@ -15,6 +19,9 @@ function getProductQuantity(shoppingCart, productId) {
 export default function ProductCard({
   product, productId, shoppingCart, showDescription, handleAddItemToCart, handleRemoveItemFromCart,
 }) {
+  // **********************************************************************
+  // CONSTANTS
+  // **********************************************************************
   const quantity = getProductQuantity(shoppingCart, productId);
   const productImg = (
     <img
@@ -24,9 +31,12 @@ export default function ProductCard({
     />
   );
 
+  // **********************************************************************
+  // ELEMENT RENDERING
+  // **********************************************************************
   return (
     <div className={`product-card-wrapper ${showDescription ? 'detail' : ''}`}>
-      <span className={`amt-in-cart ${quantity === 0 ? 'hidden' : ''} ${showDescription ? 'detail' : ''}`}>
+      <span className={`product-quantity ${quantity === 0 ? 'hidden' : ''} ${showDescription ? 'detail' : ''}`}>
         {showDescription ? `In cart: ${quantity}` : `${quantity}`}
       </span>
       <div className={`product-card ${showDescription ? 'detail' : ''}`}>
@@ -40,14 +50,14 @@ export default function ProductCard({
         {showDescription ? <p className="product-description">{product.description}</p> : null}
         <button
           onClick={() => handleAddItemToCart(productId)}
-          className={`add-item card' ${showDescription ? 'detail' : ''}`}
+          className={`add card' ${showDescription ? 'detail' : ''}`}
           type="button"
         >
           Add Item
         </button>
         <button
           onClick={() => handleRemoveItemFromCart(productId)}
-          className={`remove-item card ${showDescription ? 'detail' : ''}`}
+          className={`remove card ${showDescription ? 'detail' : ''}`}
           type="button"
         >
           Remove Item

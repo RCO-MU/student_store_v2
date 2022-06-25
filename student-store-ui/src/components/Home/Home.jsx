@@ -5,7 +5,7 @@ import Hero from '../Hero/Hero';
 import ProductGrid from '../ProductGrid/ProductGrid';
 
 export default function Home({
-  products, shoppingCart, query, category, handleAddItemToCart,
+  products, shoppingCart, query, category, isFetching, handleAddItemToCart,
   handleRemoveItemFromCart, handleQueryChange, handleCategoryChange,
 }) {
   return (
@@ -41,6 +41,7 @@ export default function Home({
         products={products}
         query={query}
         category={category}
+        isFetching={isFetching}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}
         shoppingCart={shoppingCart}

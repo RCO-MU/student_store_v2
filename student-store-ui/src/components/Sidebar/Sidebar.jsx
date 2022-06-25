@@ -6,10 +6,11 @@ import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 export default function Sidebar({
   isOpen, products, shoppingCart, handleOnToggle, checkoutForm, error,
-  purchaseCompleted, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm,
-  handleAddItemToCart, handleRemoveItemFromCart,
+  purchaseCompleted, purchaseInfo, isFetching, handleOnCheckoutFormChange,
+  handleOnSubmitCheckoutForm, handleAddItemToCart, handleRemoveItemFromCart,
+  handleTryAgain,
 }) {
-  // collapsed
+  // collapsed sidebar
   if (!isOpen) {
     return (
       <section className="sidebar closed">
@@ -23,7 +24,7 @@ export default function Sidebar({
       </section>
     );
   }
-  // expanded
+  // expanded sidebar
   return (
     <section className="sidebar open">
       <button className="collapser button" onClick={handleOnToggle} type="button">
@@ -48,10 +49,13 @@ export default function Sidebar({
         shoppingCart={shoppingCart}
         checkoutForm={checkoutForm}
         error={error}
+        isFetching={isFetching}
         purchaseCompleted={purchaseCompleted}
+        purchaseInfo={purchaseInfo}
         handleOnToggle={handleOnToggle}
         handleOnCheckoutFormChange={handleOnCheckoutFormChange}
         handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+        handleTryAgain={handleTryAgain}
       />
     </section>
   );
