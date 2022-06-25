@@ -7,6 +7,7 @@ import CheckoutForm from '../CheckoutForm/CheckoutForm';
 export default function Sidebar({
   isOpen, products, shoppingCart, handleOnToggle, checkoutForm, error,
   purchaseCompleted, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm,
+  handleAddItemToCart, handleRemoveItemFromCart,
 }) {
   // collapsed
   if (!isOpen) {
@@ -39,6 +40,8 @@ export default function Sidebar({
         products={products}
         shoppingCart={shoppingCart}
         purchaseCompleted={purchaseCompleted}
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
       />
       <CheckoutForm
         isOpen={isOpen}

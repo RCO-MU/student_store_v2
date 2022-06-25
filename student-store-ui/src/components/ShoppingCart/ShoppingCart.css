@@ -38,3 +38,28 @@
   font-weight: bold;
   font-size: larger;
 }
+
+.cart-add {
+  border-radius: 100%;
+  background-color: #2ea44f;
+  width:20px;
+  height: 30px;
+  padding: 0
+}
+
+.cart-remove {
+  border-radius: 100%;
+  background-color: #d02424;
+  text-align: center;
+  width: 20px;
+  height: 30px;
+  padding: 0;
+}
+
+.cart-add:hover {
+  background-color: #207e3b;
+}
+
+.cart-remove:hover {
+  background-color: #a42323;
+}

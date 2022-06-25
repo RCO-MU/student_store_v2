@@ -33,6 +33,7 @@ function calculateTotal(shoppingCart, products) {
 
 export default function ShoppingCart({
   isOpen, products, shoppingCart, purchaseCompleted,
+  handleAddItemToCart, handleRemoveItemFromCart,
 }) {
   // if sidebar is open
   if (isOpen) {
@@ -53,18 +54,39 @@ export default function ShoppingCart({
       <div className="shopping-cart">
         <table className="cart-breakdown">
           <thead>
-            <th className="cart-product-name header header-cell">Name</th>
-            <th className="cart-product-quantity header header-cell">Quantity</th>
-            <th className="cart-product-unit-price header header-cell">Unit Price</th>
-            <th className="cart-product-price header header-cell">Cost</th>
+            <tr>
+              <th className="cart-product-name header header-cell">Name</th>
+              <th className="cart-product-quantity header header-cell">Quantity</th>
+              <th className="cart-product-unit-price header header-cell">Unit Price</th>
+              <th className="cart-product-price header header-cell">Cost</th>
+            </tr>
           </thead>
           <tbody>
             {shoppingCart.map((item) => {
               const product = getProductFromProducts(item.itemId, products);
               return (
                 <tr key={item.itemId} className="item-row">
-                  <td className="cart-product-name item-cell">{product.name}</td>
-                  <td className="cart-product-quantity item-cell">{item.quantity}</td>
+                  <td className="cart-product-name item-cell">
+                    {product.name}
+                  </td>
+                  <td className="cart-product-quantity item-cell">
+                    <button
+                      onClick={() => handleRemoveItemFromCart(item.itemId)}
+                      className="cart-remove"
+                      type="button"
+                    >
+                      -
+                    </button>
+                    {` ${item.quantity} `}
+                    <button
+                      onClick={() => handleAddItemToCart(item.itemId)}
+                      className="cart-add"
+                      type="button"
+                    >
+                      +
+                    </button>
+
+                  </td>
                   <td className="cart-product-unit-price item-cell">{formatPrice(product.price)}</td>
                   <td className="cart-product-price item-cell">{formatPrice(product.price * item.quantity)}</td>
                 </tr>

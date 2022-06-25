@@ -6,9 +6,13 @@
 }
 
 .product-query {
-  margin-top:20px;
-  margin-left: 10px;;
-  font-size: 30px;
+  position: relative;
+  margin-left: 20px;
+  top:14px;
+  font-size: x-large;
+  height: 40px;
+  padding-left: 5px;
+  width: 300px;
 }
 
 .search-button {
@@ -19,7 +23,7 @@
   margin: 0;
   border: 0px solid rgba(0,0,0,0);
   color: rgba(0,0,0,0);
-  top:-6px;
+  top:10px;
 }
 
 .search-icon {
@@ -27,4 +31,18 @@
   width: 40px;
   height: 40px;
   margin: 0;
+}
+
+#categories {
+  position: relative;
+  margin: 20px;
+  height: 40px;
+  width: 300px;
+  padding-left: 5px;
+  font-size: x-large;
+  top:13px;
+}
+
+#categories:hover {
+  cursor: pointer;
 }

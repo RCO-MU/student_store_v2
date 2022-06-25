@@ -94,6 +94,7 @@ export default function App() {
   };
 
   const handleRemoveItemFromCart = (productId) => {
+    console.log('hi');
     const productIndex = shoppingCart.findIndex((product) => product.itemId === productId);
     // if product is in cart
     if (productIndex !== -1) {
@@ -179,6 +180,8 @@ export default function App() {
           handleOnToggle={handleOnToggle}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+          handleAddItemToCart={handleAddItemToCart}
+          handleRemoveItemFromCart={handleRemoveItemFromCart}
         />
         <Navbar />
         <div

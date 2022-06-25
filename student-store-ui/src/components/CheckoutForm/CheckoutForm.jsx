@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import './CheckoutForm.css';
 
 export default function CheckoutForm({
@@ -25,12 +26,12 @@ export default function CheckoutForm({
   }
   return (
     <div className="checkout-form">
-      <h3 className="form-title">Checkout Form</h3>
-      <form>
-        <label>
+      <h3 className="form-title">~ Checkout Form ~</h3>
+      <div className="inputs">
+        <label className="checkout-label">
           Email:
           <input
-            className="checkout-form-input"
+            className="checkout-form-input email"
             type="email"
             name="email"
             placeholder="student@codepath.org"
@@ -39,10 +40,10 @@ export default function CheckoutForm({
           />
         </label>
         <br />
-        <label>
+        <label className="checkout-label">
           Name:
           <input
-            className="checkout-form-input"
+            className="checkout-form-input name"
             type="text"
             name="name"
             placeholder="Student Name"
@@ -50,7 +51,9 @@ export default function CheckoutForm({
             value={checkoutForm.name}
           />
         </label>
-        <br />
+      </div>
+      <br />
+      <Link to="/">
         <button
           type="button"
           className="checkout-button"
@@ -58,8 +61,8 @@ export default function CheckoutForm({
         >
           Checkout
         </button>
-        {checkoutIssue}
-      </form>
+      </Link>
+      {checkoutIssue}
     </div>
   );
 }

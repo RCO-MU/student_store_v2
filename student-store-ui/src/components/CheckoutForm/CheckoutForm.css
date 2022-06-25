@@ -1,17 +1,32 @@
 .checkout-form {
     width: 100%;
     color: white;
+    float: left;
   }
 
 .form-title {
   text-align: center;
+  font-size: xx-large;
+  margin: 10px;
 }
   
 .checkout-complete {
   color: white;
 }
 
-button {
+.checkout-label {
+  font-size: 20px;
+}
+
+.checkout-form-input {
+  margin: 20px;
+  padding: 10px;
+  font-size: 15px;
+  width: 450px;
+  max-width: 70%;
+}
+
+.checkout-button {
   appearance: none;
   border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
@@ -21,25 +36,35 @@ button {
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 20px;
-  margin: 2px;
-  padding: 6px 16px;
+  margin: 0px;
+  margin-left: calc(50% - 100px);
+  margin-top: 20px;
+  padding: 16px 16px;
   position: relative;
   text-align: center;
   text-decoration: none;
   transition: 0.3s;
   user-select: none;
   -webkit-user-select: none;
+  text-align: center;
   touch-action: manipulation;
   vertical-align: middle;
+  width: 200px;
   white-space: nowrap;
 }
 
 button:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
+}
+
+.checkout-fail {
+  text-align: center;
+  font-size: x-large;
+  color: rgb(255, 255, 255);
 }
 
 .checkout-button {
