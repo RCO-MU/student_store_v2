@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-console */
 import * as React from 'react';
 import axios from 'axios';
@@ -179,7 +177,14 @@ export default function App() {
   // PAGE RENDERING
   // **********************************************************************
   return (
-    <div className="app">
+    <div
+      className="app"
+      role="button"
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') { handleOnToggle(); }
+      }}
+      tabIndex={0}
+    >
       <main>
         <Sidebar
           isOpen={isOpen}
@@ -201,6 +206,10 @@ export default function App() {
         <div
           className={!isOpen ? 'screen-content' : 'screen-content deactivated'}
           onClick={handleOnToggle}
+          onKeyDown={() => {}}
+          label="screen-content"
+          role="button"
+          tabIndex={0}
         />
         <Routes>
           <Route

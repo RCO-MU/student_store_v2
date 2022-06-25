@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import { Link } from 'react-router-dom';
@@ -22,6 +21,7 @@ export default function ProductCard({
   // **********************************************************************
   // CONSTANTS
   // **********************************************************************
+
   const quantity = getProductQuantity(shoppingCart, productId);
   const productImg = (
     <img
@@ -34,6 +34,7 @@ export default function ProductCard({
   // **********************************************************************
   // ELEMENT RENDERING
   // **********************************************************************
+
   return (
     <div className={`product-card-wrapper ${showDescription ? 'detail' : ''}`}>
       <span className={`product-quantity ${quantity === 0 ? 'hidden' : ''} ${showDescription ? 'detail' : ''}`}>

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import formatPrice from '../currency';

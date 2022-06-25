@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import './CheckoutForm.css';
@@ -94,7 +92,7 @@ export default function CheckoutForm({
     <div className="checkout-form">
       <h3 className="form-title">~ Checkout Form ~</h3>
       <div className="inputs">
-        <label className="checkout-label">
+        <label className="checkout-label" htmlFor="email">
           Email:
           <input
             className="checkout-form-input email"
@@ -106,7 +104,7 @@ export default function CheckoutForm({
           />
         </label>
         <br />
-        <label className="checkout-label">
+        <label className="checkout-label" htmlFor="name">
           Name:
           <input
             className="checkout-form-input name"
