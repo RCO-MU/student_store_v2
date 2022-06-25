@@ -29,6 +29,10 @@
 .cart-product-name {
   font-weight: bold;
 }
+
+.cart-product-quantity {
+  font-weight: bold;
+}
   
 .receipt {
   color: white;
@@ -44,7 +48,8 @@
   background-color: #2ea44f;
   width:20px;
   height: 30px;
-  padding: 0
+  padding: 0;
+  font-weight: bold;
 }
 
 .cart-remove {
@@ -54,6 +59,7 @@
   width: 20px;
   height: 30px;
   padding: 0;
+  font-weight: bold;
 }
 
 .cart-add:hover {

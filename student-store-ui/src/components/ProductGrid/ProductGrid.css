@@ -6,6 +6,7 @@
   gap: 0px;
   position: relative;
   margin-left:calc(40% - 100px);
+  padding-bottom: 50px;
 }
 
 @media (min-width: 660px) {
@@ -13,7 +14,7 @@
     margin: 0 auto;
     grid-template-columns: auto auto; 
     gap: 0px;
-    left: 0px;
+    left: 5px;
   }
 }
 
@@ -22,7 +23,7 @@
     margin: 0 auto;
     grid-template-columns: auto auto auto; 
     gap: 0px;
-    left: 0px;
+    left: 5px;
   }
 }
 
@@ -31,7 +32,7 @@
     margin: 0 auto;
     grid-template-columns: auto auto auto auto;
     gap: 0px;
-    left: 0px;
+    left: 5px;
   }
 }
 
@@ -40,6 +41,6 @@
     margin: 0 auto;
     grid-template-columns: auto auto auto auto auto; 
     gap: 0px;
-    left: 0px;
+    left: 5px;
   }
 }

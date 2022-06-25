@@ -5,6 +5,7 @@
 
 .product-card-wrapper.detail {
   margin:auto;
+  padding-bottom: 50px;
 }
 
 .product-card {
@@ -17,6 +18,7 @@
     border-radius: 10%;
     background-color: rgb(255, 255, 255);
     display: flexbox;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
 
 .product-card.detail {

@@ -7,6 +7,7 @@
     height: 100%;
     transition: all 0.5s ease;
     z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.55) 1.95px 1.95px 2.6px;
 }
 
 .sidebar.closed {

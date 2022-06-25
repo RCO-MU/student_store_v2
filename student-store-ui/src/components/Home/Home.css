@@ -7,12 +7,13 @@
 
 .product-query {
   position: relative;
-  margin-left: max(20px, calc(8% - 50px));
-  top:20px;
-  font-size: x-large;
+  margin-left: 30px;
   height: 40px;
-  padding-left: 5px;
   width: 300px;
+  padding-left: 5px;
+  font-size: x-large;
+  top:20px;
+  left: max(calc(50% - 750px), 0px)
 }
 
 .search-button {
@@ -24,23 +25,25 @@
   border: 0px solid rgba(0,0,0,0);
   color: rgba(0,0,0,0);
   top:16px;
+  position: relative;
+  left: max(calc(50% - 760px), 0px)
 }
 
 .search-icon {
-  position: relative;
   width: 40px;
   height: 40px;
-  margin: 0;
 }
 
 #categories {
   position: relative;
-  margin: 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
   height: 40px;
   width: 300px;
   padding-left: 5px;
   font-size: x-large;
-  top:19px;
+  top:20px;
+  left: max(calc(50% - 760px), 0px)
 }
 
 #categories:hover {
