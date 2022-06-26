@@ -149,6 +149,7 @@ export default function App() {
       shoppingCart,
     };
     await sendPostRequest(checkoutRequestBody);
+    window.scrollTo(0, 0);
     return 200;
   };
 
@@ -225,9 +226,7 @@ export default function App() {
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
                 handleQueryChange={handleQueryChange}
                 handleCategoryChange={handleCategoryChange}
-              >
-                {window.scrollTo(0, 0)}
-              </Home>
+              />
 )}
           />
           <Route
@@ -241,12 +240,10 @@ export default function App() {
                 setIsFetching={setIsFetching}
                 error={error}
                 setError={setError}
-              >
-                {window.scrollTo(0, 0)}
-              </ProductDetail>
+              />
 )}
           />
-          <Route path="*" element={<NotFound>{window.scrollTo(0, 0)}</NotFound>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <footer>
           <div className="footer-content">

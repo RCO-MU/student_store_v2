@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import { Link } from 'react-router-dom';
@@ -28,6 +29,9 @@ export default function ProductCard({
       className={`product-img ${showDescription ? 'detail' : ''}`}
       src={product.image}
       alt={product.name}
+      role="button"
+      onClick={showDescription ? () => {} : () => { window.scrollTo(0, 0); }}
+      onKeyDown={() => {}}
     />
   );
 
