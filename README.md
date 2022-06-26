@@ -21,6 +21,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 ### Extra Features  
 
+  - [X] Clicking the logo, homepage product cards, and checkout form (on success) automatically reset the window scroll to the top of the page.
   - [X] Sidebar dims and deactivates the main screen content.
   - [X] Sidebar can be opened with `Esc` and closed with `Esc` or clicking on the dimmed screen content.
   - [X] Email input only accepts a valid email address.
@@ -243,8 +244,8 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of things /
-unexplained with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
+The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of unexplained 
+things with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
 `axios` very quickly, it seemed many people around me had trouble with it. I also think that way more CSS properties should be shown and taught.
 
 On a different note, I also had an issue with the inconsistency of project core/stretch requirements across the Unit 2 Assignment page, the 
@@ -258,7 +259,7 @@ page. This is all to say I found the goals of the assignment were somewhat uncle
   
 There were some features I was hoping to implement that were out of scope or would take too long (since I'm already submitting late.) 
 
-- On the Navbar:
+- On the `Navbar`:
     - Buttons to scroll to the relevant section
     - A "Cart" button that would display the total number of items in user's cart and toggle the sidebar
 - On the `/products` page:
@@ -270,7 +271,8 @@ There were some features I was hoping to implement that were out of scope or wou
 
 ### Demo Video and Reflection
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you 
+would like to try next time?
 
 I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
