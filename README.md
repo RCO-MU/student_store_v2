@@ -21,6 +21,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 ### Extra Features  
 
+  - [X] Clicking the logo, homepage product cards, and checkout form (on success) automatically reset the window scroll to the top of the page.
   - [X] Sidebar dims and deactivates the main screen content.
   - [X] Sidebar can be opened with `Esc` and closed with `Esc` or clicking on the dimmed screen content.
   - [X] Email input only accepts a valid email address.
