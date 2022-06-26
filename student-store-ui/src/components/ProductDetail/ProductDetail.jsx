@@ -4,10 +4,10 @@ import * as React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './ProductDetail.css';
 import ProductView from '../ProductView/ProductView';
 import NotFound from '../NotFound/NotFound';
 import { API_URL } from '../../constants';
+import './ProductDetail.css';
 
 export default function ProductDetail({
   shoppingCart, handleAddItemToCart, handleRemoveItemFromCart,
@@ -57,7 +57,11 @@ export default function ProductDetail({
 
   // loading
   if (isFetching) {
-    return (<h1 className="loading">Loading...</h1>);
+    return (
+      <div className="loading-wrapper">
+        <h1 className="loading">Loading...</h1>
+      </div>
+    );
   }
   // if product search does not succeed (product is not populated)
   if (Object.keys(product).length === 0) {

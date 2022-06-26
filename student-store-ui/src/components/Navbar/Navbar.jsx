@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Logo />
-      <h2 className="title">The Student Store</h2>
+      <h2 className="title">The Student Store™</h2>
     </nav>
   );
 }

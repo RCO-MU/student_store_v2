@@ -204,10 +204,10 @@ export default function App() {
         />
         <Navbar />
         <div
-          className={!isOpen ? 'screen-content' : 'screen-content deactivated'}
+          className={!isOpen ? 'home-page-display' : 'home-page-display deactivated'}
           onClick={handleOnToggle}
           onKeyDown={() => {}}
-          label="screen-content"
+          label="home-page-display"
           role="button"
           tabIndex={0}
         />
@@ -225,7 +225,9 @@ export default function App() {
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
                 handleQueryChange={handleQueryChange}
                 handleCategoryChange={handleCategoryChange}
-              />
+              >
+                {window.scrollTo(0, 0)}
+              </Home>
 )}
           />
           <Route
@@ -239,13 +241,74 @@ export default function App() {
                 setIsFetching={setIsFetching}
                 error={error}
                 setError={setError}
-              />
+              >
+                {window.scrollTo(0, 0)}
+              </ProductDetail>
 )}
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound>{window.scrollTo(0, 0)}</NotFound>} />
         </Routes>
         <footer>
-          <p>This is where the footer info goes</p>
+          <div className="footer-content">
+            <div id="about-us">
+              <h1 className="about-us-title">About Us</h1>
+              <div className="about-us-content">
+                <p>
+                  {`The Student Store™ offers "great products" (they're okay) at "great prices" 
+                  (sorry for the inflation) from a "great team" (one developer) 
+                  and for a "great cause" (my bank account).`}
+
+                </p>
+                <p>
+                  {`We've searched "far and wide" (fetched from a premade API) for items 
+                  that perk the interests of even the most eccentric students and decided to 
+                  "offer them" (you can't actually buy these items) all here in one "place" 
+                  (not actually real).`}
+
+                </p>
+                <p>
+                  {`All "proceeds" (again, you can't actually pay) go towards bringing "high quality CS
+                  education" (paying my college tuition) to "college students" (just me) "around the country" (one place).`}
+
+                </p>
+              </div>
+            </div>
+            <div id="contact-us">
+              <h1 className="contact-us-title">Contact Us</h1>
+              <div className="contact-us-content">
+                <p>
+                  <b>• Email: </b>
+                  rco@fb.com
+                </p>
+                <p>
+                  <b>• Phone: </b>
+                  305-NOT-REAL
+                </p>
+                <p>
+                  <b>• Address: </b>
+                  Somewhere in Miami
+                </p>
+                <p>
+                  <b>• Socials: </b>
+                  @el.papi.rafi on Instagram 🤪
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="final">
+            <div className="final-text-div">
+              <h1 className="final-text">
+                We hope you enjoy The Student Store™!
+              </h1>
+            </div>
+            <div className="logo-img-div">
+              <img
+                className="logo-img-footer"
+                src="https://i.imgur.com/Ewq65P0.png"
+                alt="logo"
+              />
+            </div>
+          </div>
         </footer>
       </main>
     </div>

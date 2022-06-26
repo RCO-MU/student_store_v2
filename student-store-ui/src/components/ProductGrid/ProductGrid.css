@@ -6,7 +6,7 @@
   gap: 0px;
   position: relative;
   margin-left:calc(40% - 100px);
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 @media (min-width: 660px) {
