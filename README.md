@@ -243,8 +243,8 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of things /
-unexplained with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
+The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of unexplained 
+things with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
 `axios` very quickly, it seemed many people around me had trouble with it. I also think that way more CSS properties should be shown and taught.
 
 On a different note, I also had an issue with the inconsistency of project core/stretch requirements across the Unit 2 Assignment page, the 
