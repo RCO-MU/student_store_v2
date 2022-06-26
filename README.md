@@ -271,6 +271,12 @@ There were some features I was hoping to implement that were out of scope or wou
 
 ### Demo Video and Reflection
 
+
+
+https://user-images.githubusercontent.com/73001297/175806548-3e4a1963-f96a-4c1c-b9e4-ed9282865728.mp4
+
+
+
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you 
 would like to try next time?
 
