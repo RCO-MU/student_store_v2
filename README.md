@@ -258,7 +258,7 @@ page. This is all to say I found the goals of the assignment were somewhat uncle
   
 There were some features I was hoping to implement that were out of scope or would take too long (since I'm already submitting late.) 
 
-- On the Navbar:
+- On the `Navbar`:
     - Buttons to scroll to the relevant section
     - A "Cart" button that would display the total number of items in user's cart and toggle the sidebar
 - On the `/products` page:
@@ -270,7 +270,8 @@ There were some features I was hoping to implement that were out of scope or wou
 
 ### Demo Video and Reflection
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you 
+would like to try next time?
 
 I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
