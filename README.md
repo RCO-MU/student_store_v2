@@ -35,7 +35,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
   - [X] The core App component that contains the routes for the app and does the initial data fetching
   - [X] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-        (The redirection works, but I did not use a `BrowserRouter` because it was causing errors in conjuction with `Routes`.)
+        *(The redirection works, but I did not use a `BrowserRouter` because it was causing errors in conjuction with `Routes`.)*
     - [X] `/` - Should render the `Home.jsx` component
     - [X] `/products/:productId` - should render the `ProductDetail` component
     - [X] `*` - anything else should render the `NotFound` component

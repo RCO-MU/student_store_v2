@@ -41,10 +41,15 @@ export default function App() {
   async function fetchAllProductData() {
     setIsFetching(true);
     try {
-      const { data } = await axios(API_URL);
+      const { data } = await axios.get(API_URL);
       console.log('productData ', data);
-      setProducts(data.products);
-      setError('');
+      const res = data.products;
+      if (res.length > 0) {
+        setProducts(data.products);
+        setError('');
+      } else {
+        setError('No products found');
+      }
     } catch (err) {
       console.error(err);
       setError(err);

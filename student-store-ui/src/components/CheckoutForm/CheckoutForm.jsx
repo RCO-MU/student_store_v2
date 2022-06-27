@@ -38,6 +38,7 @@ export default function CheckoutForm({
       // price line is added manually because line returns $NaN if purchase is too expensive.
       return (
         <div className="checkout-complete">
+          <p className="success notification">Success!</p>
           <p className="notification">{checkoutSuccessMsg}</p>
           <p className="notification">{'Here\'s your purchase breakdown:'}</p>
           {purchaseInfo.receipt.lines.map((line, i) => {
@@ -63,7 +64,7 @@ export default function CheckoutForm({
     // purchase error
     return (
       <div className="checkout-complete error">
-        <p className="notification">{checkoutFailMsg}</p>
+        <p className="error notification">{checkoutFailMsg}</p>
         <button
           type="button"
           className="checkout-button"
