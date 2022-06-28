@@ -22,4 +22,10 @@
   margin-left:50%;
   left:-1500px;
 }
+
+@media (max-width: 900px) {
+  .hero {
+    margin-top: 220px;
+  }
+}
   

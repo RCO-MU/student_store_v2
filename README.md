@@ -18,6 +18,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
   - [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
   - [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
   - [X] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+  - [X] Buttons in the Navbar to scroll to the relevant section.
 
 ### Extra Features  
 
@@ -260,7 +261,6 @@ page. This is all to say I found the goals of the assignment were somewhat uncle
 There were some features I was hoping to implement that were out of scope or would take too long (since I'm already submitting late.) 
 
 - On the `Navbar`:
-    - Buttons to scroll to the relevant section
     - A "Cart" button that would display the total number of items in user's cart and toggle the sidebar
 - On the `/products` page:
     - A more interesting background (color/pattern)
@@ -271,16 +271,10 @@ There were some features I was hoping to implement that were out of scope or wou
 
 ### Demo Video and Reflection
 
-
-
-https://user-images.githubusercontent.com/73001297/175806548-3e4a1963-f96a-4c1c-b9e4-ed9282865728.mp4
-
-
-
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you 
 would like to try next time?
 
-I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
+One issue I noticed is there are some inconsistencies with the category dropdown filter upon switching between the home page and product detail pages. However, overall, I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
 ### Open-source libraries used
 

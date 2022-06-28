@@ -1,0 +1,33 @@
+#About {
+  position: absolute;
+  top: -150px;
+}
+
+#about-us {
+    background-color: rgb(115, 234, 194);
+    width: auto;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: auto;
+    margin: 50px;
+    margin-top: 0px;
+    border-radius: 16px 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  
+  .about-us-title {
+    text-align: center;
+    margin-top: 30px;
+    padding: auto;
+    padding-bottom: 25px;
+    margin-bottom: 0;
+    font-size: 50px;
+    border-bottom: 3px solid rgb(0, 0, 0);
+  }
+  
+  .about-us-content {
+    margin: auto;
+    font-size: 20px;
+    padding-top: 0;
+    padding: 40px;
+  }
