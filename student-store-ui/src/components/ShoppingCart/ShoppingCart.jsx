@@ -26,7 +26,7 @@ function calculateTotal(shoppingCart, products) {
     const itemPrice = getProductFromProducts(item.itemId, products).price;
     const itemQuantity = item.quantity;
     sum += itemPrice * itemQuantity;
-    totalItems += 1;
+    totalItems += itemQuantity;
   });
   const tax = sum * taxRate;
   return {
