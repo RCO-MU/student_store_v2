@@ -274,7 +274,7 @@ There were some features I was hoping to implement that were out of scope or wou
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you 
 would like to try next time?
 
-One issue I noticed is there are some inconsistencies with the category dropdown filter upon switching between the home page and product detail pages. However, overall, I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
+Overall, I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
 ### Open-source libraries used
 
