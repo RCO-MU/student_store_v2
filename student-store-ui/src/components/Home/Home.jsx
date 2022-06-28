@@ -30,6 +30,7 @@ export default function Home({
         name="categories"
         id="categories"
         onChange={(e) => handleCategoryChange(e.target.value)}
+        value={category}
       >
         <option value="all">All Categories</option>
         <option value="clothing">Clothing</option>
