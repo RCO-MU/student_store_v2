@@ -1,34 +1,37 @@
-# Student Store React UI
+# Project #2: Student Store
 
 ## Overview
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
+// Include your gif here
+
 ### Application Features
 
-### Core Features
-  - [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-  - [X] On initial page load, display the products at the GET /store endpoint.
-  - [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
-  - [X] User can search for products.
-  - [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+#### Core Features
 
-### Stretch Features
-  - [X] User can click to expand the shopping cart in the left navigation.
-  - [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
-  - [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
-  - [X] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-  - [X] Buttons in the Navbar to scroll to the relevant section.
+- [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
+- [X] User can search for products.
+- [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [X] User can click to expand the shopping cart in the left navigation.
+- [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
+- [X] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [X] User can check out, and can view receipt upon completion.
 
-### Extra Features  
+#### Stretch Features
 
-  - [X] Clicking the logo, homepage product cards, and checkout form (on success) automatically reset the window scroll to the top of the page.
-  - [X] Sidebar dims and deactivates the main screen content.
-  - [X] Sidebar can be opened with `Esc` and closed with `Esc` or clicking on the dimmed screen content.
-  - [X] Email input only accepts a valid email address.
-  - [X] Upon purchase failure, user has a "Try Again" button to reattempt the purchase (shopping cart contents are kept).
-  - [X] Purchase receipt allows user contains "Keep Shopping" button.
-  - [X] `NotFound` page has a `Link` component to return to the homepage.
+- [X] User can click in the top navigation bar to scroll to the relevant section.
+- [X] User sees a "not found" display when searching for a nonexistent product.
+- [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
+- [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
+- [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
+
+### Passing Automated Tests
+
+The following specifications were met on the Express backend and the React frontend.
 
 ### React UI
 
@@ -36,7 +39,6 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
   - [X] The core App component that contains the routes for the app and does the initial data fetching
   - [X] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-        *(The redirection works, but I did not use a `BrowserRouter` because it was causing errors in conjuction with `Routes`.)*
     - [X] `/` - Should render the `Home.jsx` component
     - [X] `/products/:productId` - should render the `ProductDetail` component
     - [X] `*` - anything else should render the `NotFound` component
@@ -239,51 +241,64 @@ Selling merchandise in the modern era requires digital solutions. For this proje
         - [X] The `shoppingCart` should be emptied
         - [X] The `checkoutForm` should be reset to its default state.
 
+**Server** - Create an Express server
+  - [ ] Wire up the appropriate middleware and error handlers in the `app.js` file
+  - [ ] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
+  - [ ] Have a `server.js` file that starts the app by listening on port `3001`.
+
+**Models** - The API should use a `Store` model that handles the following
+  - [ ] List all products currently in the `db.json` file
+  - [ ] Fetch a single product by its id
+  - [ ] Create a purchase order
+
+**Routes** - The API should contain a route mounted at the `/store` endpoint
+  - [ ] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
+  - [ ] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
+  - [ ] It should allow `POST` requests to the `/store` endpoint:
+    - [ ] The endpoint should create purchase orders for users and save them to the `db.json` file
+    - [ ] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
+      - [ ] The `shoppingCart` field should contain the user's order.
+        - [ ] This should be an array of objects.
+        - [ ] Each object in the array should have two fields:
+          <!-- - [ ] The `item` field should store an object of the item being purchased -->
+          - [ ] The `itemId` field should store the `id` of the item being purchased
+          - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
+      - [ ] The `user` field should contain the name and email of the person placing the order.
+      - [ ] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
+      - [ ] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
+      - [ ] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
+      - [ ] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
+        - **required**:
+          - [ ] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
+          - [ ] `name` - the name of the user making the purchase
+          - [ ] `email` - the email of the user making the purchase
+          - [ ] `order` - the `shoppingCart` value sent in the `POST` request
+          - [ ] `total` - the calculated total of the order
+          - [ ] `createdAt` - a string representation of the date and time when the order was placed
+        - **optional**:
+          - [ ] `receipt` - text describing the order (what might go on a receipt)
+      - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
 ---
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of unexplained 
-things with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
-`axios` very quickly, it seemed many people around me had trouble with it. I also think that way more CSS properties should be shown and taught.
-
-On a different note, I also had an issue with the inconsistency of project core/stretch requirements across the Unit 2 Assignment page, the 
-example deployed student store, and the readme. I was mostly following the section "Components and their expected functionality" from the 
-webpage, only to realize the above "Goals" section highlighted much different core and stretch functionality, namely product filtering 
-and shopping cart +/- buttons. Then, the template readme not only lists later requirements for the 3rd week of the project, but also points out 
-the Navbar buttons to scroll to relevant sections, which are in the demo website, but never mentioned as a deliverable on the Unit 2 Assignment 
-page. This is all to say I found the goals of the assignment were somewhat unclear.
+Add your response here
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-There were some features I was hoping to implement that were out of scope or would take too long (since I'm already submitting late.) 
+Add your response here
 
-- On the `Navbar`:
-    - A "Cart" button that would display the total number of items in user's cart and toggle the sidebar
-- On the `/products` page:
-    - A more interesting background (color/pattern)
-    - A "Back to Home" or "Continue Shopping" button to return to the homepage
-    - A display of suggested products based on the previous page's search information
-- On the homepage: 
-    - User can hover over a product card to display either the item description, or a larger version of the product image
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-### Demo Video and Reflection
-
-
-https://user-images.githubusercontent.com/73001297/176235786-facbb8e6-3d09-42cc-9b46-2b3fd2ea9970.mp4
-
-
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you 
-would like to try next time?
-
-Overall, I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
+Add your response here
 
 ### Open-source libraries used
 
-- N/A
+- Add any links to open-source libraries used in your project.
 
 ### Shout out
 
-Shoutout Arisa, Preeti, Robert, and Christina for being a dope moral support group.
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
