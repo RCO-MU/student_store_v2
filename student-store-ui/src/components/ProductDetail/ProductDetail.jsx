@@ -59,7 +59,7 @@ export default function ProductDetail({
   if (isFetching) {
     return (
       <div className="loading-wrapper">
-        <h1 className="loading">Loading...</h1>
+        <h1 className="loading-card">Loading...</h1>
       </div>
     );
   }

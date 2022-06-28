@@ -27,6 +27,12 @@
   }
 }
 
+.loading-grid {
+  height: 300px;
+  text-align: center;
+  padding-top: 100px;
+}
+
 @media (min-width: 1220px) {
   .product-grid { 
     margin: 0 auto;
