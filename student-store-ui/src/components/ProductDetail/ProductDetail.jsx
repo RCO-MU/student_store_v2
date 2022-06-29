@@ -36,6 +36,7 @@ export default function ProductDetail({
       setError('');
     } catch (err) {
       console.error(err);
+      setProduct(undefined);
       setError('invalid ID');
     }
     setIsFetching(false);
@@ -61,8 +62,8 @@ export default function ProductDetail({
       </div>
     );
   }
-  // if product search does not succeed (product is not populated)
-  if (Object.keys(product).length === 0) {
+  // if product search does not succeed
+  if (product === undefined) {
     return (<NotFound />);
   }
   return (

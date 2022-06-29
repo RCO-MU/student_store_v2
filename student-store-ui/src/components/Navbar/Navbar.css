@@ -1,4 +1,5 @@
 .navbar {
+    clear: none !important;
     position: fixed;
     margin-left: 100px;
     padding: 10px;
@@ -9,52 +10,72 @@
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.16) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-#cart-icon {
+.company {
+    width: 400px;
+    height: 20px;
+    margin: 0px;
+    padding: auto;
     position: relative;
-    height: 50px;
-    width: 50px;
-    float: right;
-    left: -400px;
-    top: -60px;
-    z-index: 3;
+    top: -30px;
 }
 
 .title {
-    margin-left: 100px;
-    margin-top: 30px;
-    margin-right: 0;
-    font-size: 31px;
-    width: fit-content;
+    font-size: 30px;
+    padding-top: 35px;
 }
 
 #scroller {
-    margin: 30px;
-    z-index: 2;
     float: right;
-    position: relative;
-    width: 350px;
-    top: -30px;
-    left: 30px;
-    padding: 0;
+    margin: 45px;
+    height: 50px;
+    width: auto;
 }
 
 .scroll-to {
     position: relative;
-    margin-right: 40px;
+    padding-right: 30px;
     left: -60px;
     top: -80px;
     font-size: 25px;
     float: left;
 }
 
-@media (max-width: 900px) {
+.scroll-to.cart {
+    padding-right: 10px;
+}
+
+#cart-count {
+    background-color: rgb(245, 181, 102);
+    position: relative;
+    top:-15px;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 0;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+@media (max-width: 1050px) {
    .navbar {
-    height: 220px;
+    height: 180px;
    }
-   #scroller {
+   .company {
+    width: 400px;
+    height: 20px;
     margin: auto;
-    float: left;
-    top: 20px;
+    padding: auto;
+    margin-right: 30%;
+}
+   #scroller {
+    float: none;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    margin-right: 40px;
+    padding-right: 40px;
+    margin-left: 150px;
+    right: 100px;
+    width: 1200px;
    }
    .scroll-to {
     top: -0px;

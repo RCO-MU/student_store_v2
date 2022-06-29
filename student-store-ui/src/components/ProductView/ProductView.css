@@ -7,3 +7,9 @@
   position: relative;
   margin: 0;
 }
+
+@media (max-width: 1050px) {
+  .product-view {
+    margin-top: 50px;
+  }
+}

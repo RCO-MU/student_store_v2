@@ -23,9 +23,9 @@
   left:-1500px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .hero {
-    margin-top: 220px;
+    margin-top: 180px;
   }
 }
   

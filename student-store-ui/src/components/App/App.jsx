@@ -209,7 +209,10 @@ export default function App() {
           handleRemoveItemFromCart={handleRemoveItemFromCart}
           handleTryAgain={handleTryAgain}
         />
-        <Navbar />
+        <Navbar
+          handleOnToggle={handleOnToggle}
+          shoppingCart={shoppingCart}
+        />
         <div
           className={!isOpen ? 'home-page-display' : 'home-page-display deactivated'}
           onClick={handleOnToggle}

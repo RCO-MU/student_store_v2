@@ -1,5 +1,5 @@
 // API URL
-export const API_URL = 'https://codepath-store-api.herokuapp.com/store';
+export const API_URL = 'http://localhost:3001/store';
 
 // sample item 1 (testing)
 export const sampleItem = {

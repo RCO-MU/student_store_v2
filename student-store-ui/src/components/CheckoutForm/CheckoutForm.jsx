@@ -33,22 +33,18 @@ export default function CheckoutForm({
   if (purchaseCompleted) {
     // if no error occurred during purchase, display receipt
     if (error === '') {
-      const len = purchaseInfo.receipt.lines.length;
       // price line is added manually because line returns $NaN if purchase is too expensive.
       return (
         <div className="checkout-complete">
           <p className="success notification">Success!</p>
           <p className="notification">{checkoutSuccessMsg}</p>
           <p className="notification">{'Here\'s your purchase breakdown:'}</p>
-          {purchaseInfo.receipt.lines.map((line, i) => {
-            if (i === 0 || i >= len - 1) {
-              return null;
-            }
-            // weird key generation, sorry :(
+          {purchaseInfo.receipt.map((line) => {
+            // weird key generation
             const lineArr = line.split(' ');
             return <p key={lineArr[2] + lineArr[3]}>{`• ${line}`}</p>;
           })}
-          <p key="price">{`- After taxes and fees were applied, the total comes out to $${purchaseInfo.total}`}</p>
+          <p key="price">{`• After taxes and fees were applied, your total comes out to ${purchaseInfo.total}`}</p>
           <p className="notification">We hope you shop with us again!</p>
           <button
             type="button"
