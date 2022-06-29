@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable react/prop-types */
 import * as React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';

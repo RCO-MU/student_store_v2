@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as React from 'react';
 import './Home.css';
 import Hero from '../Hero/Hero';

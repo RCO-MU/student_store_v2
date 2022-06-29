@@ -11,20 +11,15 @@ router.get("/:productId", (req, res, next) => {
     res.send({"product": StoreModel.getProduct(id)});
 });
 
-// When both are there, it should calculate the total cost of all the 
-// items (including quantities), add a 8.75% tax to the total, and 
-// create a new purchase object containing 6 required fields and 1 
-// optional field:
-
 router.post("/", (req, res, next) => {
     try {
     const checkoutJSON = req.body;
     const cart = checkoutJSON.shoppingCart; // [{itemId, quantity}, ...]
-    // console.log(cart)
     // shoppingCart must be defined
     if (cart === undefined) {
         return res.status(400).send('Error, no cart info received');
     }
+
     cart.forEach((item) => {
         // all items must have itemId and quantity
         if (item.itemId === undefined || item.quantity === undefined) {
@@ -36,14 +31,16 @@ router.post("/", (req, res, next) => {
             return res.status(400).send('Error, duplicate items in cart');
         }
     })
+
     const user = checkoutJSON.user; // {name, email}
     // user must be defined
     if (user === undefined) {
         return res.status(400).send('Error, no user info received');
     }
-    // console.log(user);
-    const response = StoreModel.createPurchase(checkoutJSON);
-    res.status(201).send({purchase: response});
+
+    const purchase = StoreModel.createPurchase(checkoutJSON);
+    // storage.get('purchases').push(purchase).write();
+    res.status(201).send({purchase: purchase});
     } catch(err) {
         console.log('Error'); 
         return res.status(400).send('Unknown error occurred');
