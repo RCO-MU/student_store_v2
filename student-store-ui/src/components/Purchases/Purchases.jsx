@@ -3,12 +3,12 @@ import './Purchases.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { API_URL, PURCHASE_EXT } from '../../constants';
+import { API_URL, PURCHASE_EXT, noItemsMessage } from '../../constants';
 import NotFound from '../NotFound/NotFound';
 import '../../globals.css';
 
 export default function Purchases({
-  isFetching, setIsFetching, setError, setQuery,
+  isFetching, setIsFetching, setError, query, setQuery, handleQueryChange,
 }) {
   // **********************************************************************
   // STATE VARIABLES AND FUNCTIONS
@@ -44,6 +44,39 @@ export default function Purchases({
     setQuery('');
   }, []);
 
+  // **********************************************************************
+  // ELEMENT RENDERING
+  // **********************************************************************
+
+  // activePurchases = purchases that match filter conditions
+  const activePurchases = purchases.filter((purchase) => (
+    purchase.email.toLowerCase().includes(query.toLowerCase())
+  ));
+
+  // if no products match the filter conditions
+  if (activePurchases.length === 0) {
+    return (
+      <div className="purchases">
+        <input
+          className="product-query"
+          type="input"
+          name="query"
+          placeholder="Search by email"
+          onChange={(e) => handleQueryChange(e.target.value)}
+          value={query}
+        />
+        <button className="search-button" type="button">
+          <img
+            className="search-icon"
+            src="https://i.imgur.com/Q0cXzWQ.png"
+            alt="search button"
+          />
+        </button>
+        <h3 className="no-items">{noItemsMessage}</h3>
+      </div>
+    );
+  }
+
   // loading
   if (isFetching) {
     return (
@@ -58,6 +91,21 @@ export default function Purchases({
   }
   return (
     <div className="purchases">
+      <input
+        className="product-query"
+        type="input"
+        name="query"
+        placeholder="Search by email"
+        onChange={(e) => handleQueryChange(e.target.value)}
+        value={query}
+      />
+      <button className="search-button" type="button">
+        <img
+          className="search-icon"
+          src="https://i.imgur.com/Q0cXzWQ.png"
+          alt="search button"
+        />
+      </button>
       <table className="purchase-table">
         <thead>
           <tr className="purchase-row">
@@ -68,7 +116,7 @@ export default function Purchases({
           </tr>
         </thead>
         <tbody>
-          {purchases.map((purchase) => (
+          {activePurchases.map((purchase) => (
             <tr key={purchase.id} className="purchase-row">
               <td className="purchases item-cell id">
                 <Link

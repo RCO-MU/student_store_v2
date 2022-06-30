@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductView.css';
 
@@ -7,8 +8,13 @@ export default function ProductView({
 }) {
   return (
     <div className="product-view">
-      <br />
-      <br />
+      <Link
+        to="/"
+      >
+        <button className="back" type="button">
+          ← Back to products
+        </button>
+      </Link>
       <h1 className="product-id">
         Product #
         {productId}

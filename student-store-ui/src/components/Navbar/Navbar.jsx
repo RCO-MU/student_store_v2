@@ -23,19 +23,18 @@ function getItemCount(shoppingCart) {
 
 export default function Navbar({ handleOnToggle, shoppingCart }) {
   return (
-    <nav className="navbar">
+    <nav className="navbar" id="Navbar">
       <div className="company">
         <Logo />
         <h2 className="title">The Student Store™</h2>
       </div>
       <div id="scroller">
         <p className="scroll-to">
-          <Link
-            to="/"
-            onClick={() => { window.scroll(0, 0); }}
+          <HashLink
+            to="/#top"
           >
             Home
-          </Link>
+          </HashLink>
         </p>
         <p className="scroll-to cart">
           <Link

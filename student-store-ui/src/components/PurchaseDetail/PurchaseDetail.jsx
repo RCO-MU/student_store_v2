@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './PurchaseDetail.css';
 import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { API_URL, PURCHASE_EXT } from '../../constants';
 import NotFound from '../NotFound/NotFound';
 import '../../globals.css';
@@ -69,6 +69,15 @@ export default function PurchaseDetail({
   console.log('receipt', purchase.receipt);
   return (
     <div className="purchase-detail">
+      <Link
+        to="/purchases"
+      >
+        <button className="back purchase" type="button">
+          ← Back to purchases
+        </button>
+      </Link>
+      <br />
+      <br />
       <h2><u>Purchase Details:</u></h2>
       <p>
         <b>{'Purchase ID: '}</b>

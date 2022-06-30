@@ -7,6 +7,9 @@ export const STORE_EXT = '/store';
 // purchase endpoint
 export const PURCHASE_EXT = '/purchases';
 
+// if search returns no items
+export const noItemsMessage = "Sorry, we couldn't find what you were looking for.";
+
 // sample item 1 (testing)
 export const sampleItem = {
   itemId: 1,

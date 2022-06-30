@@ -8,6 +8,14 @@
   margin: 0;
 }
 
+.back {
+  color: black;
+  font-size: x-large;
+  padding: 12px;
+  position: relative;
+  margin:20px;
+}
+
 @media (max-width: 1050px) {
   .product-view {
     margin-top: 50px;

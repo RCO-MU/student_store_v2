@@ -2,7 +2,7 @@ import * as React from 'react';
 import './CheckoutForm.css';
 
 export default function CheckoutForm({
-  isOpen, isFetching, shoppingCart, checkoutForm, handleOnToggle,
+  isOpen, isFetching, shoppingCart, checkoutForm,
   handleOnCheckoutFormChange, handleOnSubmitCheckoutForm,
   handleTryAgain, error, purchaseCompleted, purchaseInfo,
 }) {
@@ -46,13 +46,6 @@ export default function CheckoutForm({
           })}
           <p key="price">{`• After taxes and fees were applied, your total comes out to ${purchaseInfo.total}`}</p>
           <p className="notification">We hope you shop with us again!</p>
-          <button
-            type="button"
-            className="checkout-button"
-            onClick={handleOnToggle}
-          >
-            Keep Shopping
-          </button>
         </div>
       );
     }

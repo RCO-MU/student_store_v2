@@ -1,3 +1,10 @@
+.back.purchase {
+    float: left;
+    position: absolute;
+    left:150px;
+    margin-top: -10px;
+}
+
 .purchase-detail {
     margin-top: 200px;
     margin-left: 150px;

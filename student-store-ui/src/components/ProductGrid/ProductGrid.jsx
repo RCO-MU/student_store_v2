@@ -1,17 +1,12 @@
 import * as React from 'react';
 import './ProductGrid.css';
 import ProductCard from '../ProductCard/ProductCard';
+import { noItemsMessage } from '../../constants';
 
 export default function ProductGrid({
   products, query, category, isFetching, handleAddItemToCart,
   handleRemoveItemFromCart, shoppingCart,
 }) {
-  // **********************************************************************
-  // CONSTANTS
-  // **********************************************************************
-
-  const noItemsMessage = "Sorry, we couldn't find what you were looking for.";
-
   // **********************************************************************
   // ELEMENT RENDERING
   // **********************************************************************

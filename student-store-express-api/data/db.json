@@ -285,6 +285,141 @@
         "1x Rice Krispies - $0.99 each, $0.99 total",
         "102x Smart Glasses - $999.99 each, $101,998.98 total"
       ]
+    },
+    {
+      "id": 6,
+      "name": "Rafael",
+      "email": "rco@fb.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$6.24",
+      "tax": "$0.55",
+      "total": "$6.79",
+      "itemCount": 2,
+      "createdAt": "6/30/2022, 3:21:00 PM",
+      "receipt": [
+        "1x Cinnamon Rolls - $2.99 each, $2.99 total",
+        "1x Coconut Water - $3.25 each, $3.25 total"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Rafael",
+      "email": "rco@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 7,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$30.46",
+      "tax": "$2.67",
+      "total": "$33.13",
+      "itemCount": 5,
+      "createdAt": "6/30/2022, 3:21:48 PM",
+      "receipt": [
+        "1x Flamin Hot Cheetos - $1.50 each, $1.50 total",
+        "1x Rice Krispies - $0.99 each, $0.99 total",
+        "1x Cinnamon Rolls - $2.99 each, $2.99 total",
+        "1x Striped Socks - $4.99 each, $4.99 total",
+        "1x Bar Code Shirts - $19.99 each, $19.99 total"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Rafael",
+      "email": "rco@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$2.49",
+      "tax": "$0.22",
+      "total": "$2.71",
+      "itemCount": 2,
+      "createdAt": "6/30/2022, 3:25:30 PM",
+      "receipt": [
+        "1x Rice Krispies - $0.99 each, $0.99 total",
+        "1x Flamin Hot Cheetos - $1.50 each, $1.50 total"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Rafael",
+      "email": "rco@fb.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 3
+        }
+      ],
+      "subtotal": "$8.97",
+      "tax": "$0.78",
+      "total": "$9.75",
+      "itemCount": 3,
+      "createdAt": "6/30/2022, 3:30:36 PM",
+      "receipt": [
+        "3x Cinnamon Rolls - $2.99 each, $8.97 total"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "rgwoin",
+      "email": "wpooppp@gmaio.copm",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$5.48",
+      "tax": "$0.48",
+      "total": "$5.96",
+      "itemCount": 3,
+      "createdAt": "6/30/2022, 3:30:51 PM",
+      "receipt": [
+        "1x Cinnamon Rolls - $2.99 each, $2.99 total",
+        "1x Flamin Hot Cheetos - $1.50 each, $1.50 total",
+        "1x Rice Krispies - $0.99 each, $0.99 total"
+      ]
     }
   ]
 }

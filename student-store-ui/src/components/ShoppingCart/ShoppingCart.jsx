@@ -118,6 +118,7 @@ export default function ShoppingCart({
           {' '}
           {priceInfo.total}
         </p>
+        <hr />
       </div>
     );
   }

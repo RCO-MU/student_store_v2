@@ -1,12 +1,17 @@
 import * as React from 'react';
 import './Home.css';
+import { useEffect } from 'react';
 import Hero from '../Hero/Hero';
 import ProductGrid from '../ProductGrid/ProductGrid';
 
 export default function Home({
   products, shoppingCart, query, category, isFetching, handleAddItemToCart,
-  handleRemoveItemFromCart, handleQueryChange, handleCategoryChange,
+  handleRemoveItemFromCart, handleQueryChange, handleCategoryChange, setQuery,
 }) {
+  useEffect(() => {
+    setQuery('');
+  }, []);
+
   return (
     <div className="home">
       <Hero />

@@ -131,10 +131,7 @@ button:focus:not(:focus-visible):not(.focus-visible) {
 
 .remove {
   background-color: #d02424;
-} 
-
-.remove.detail {
-} 
+}
 
 .remove:hover {
   background-color: #a42323;

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './Sidebar.css';
+import { Link } from 'react-router-dom';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
@@ -56,6 +57,26 @@ export default function Sidebar({
         handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
         handleTryAgain={handleTryAgain}
       />
+      <hr />
+      <button
+        type="button"
+        className="footer-button"
+        onClick={handleOnToggle}
+      >
+        Keep Shopping
+      </button>
+      <Link
+        to="/purchases#top"
+      >
+        <button
+          type="button"
+          className="footer-button purchase"
+          onClick={handleOnToggle}
+        >
+          See Purchases
+        </button>
+      </Link>
+      <hr />
     </section>
   );
 }

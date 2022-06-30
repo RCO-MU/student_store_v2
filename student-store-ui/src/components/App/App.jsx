@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import validator from 'validator';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
@@ -180,7 +181,6 @@ export default function App() {
 
   useEffect(() => {
     fetchAllProductData();
-    setQuery('');
   }, []);
 
   // **********************************************************************
@@ -196,6 +196,7 @@ export default function App() {
       tabIndex={0}
     >
       <main>
+        <div id="top" />
         <Sidebar
           isOpen={isOpen}
           products={products}
@@ -238,6 +239,7 @@ export default function App() {
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
                 handleQueryChange={handleQueryChange}
                 handleCategoryChange={handleCategoryChange}
+                setQuery={setQuery}
               />
 )}
           />
@@ -262,7 +264,9 @@ export default function App() {
                 isFetching={isFetching}
                 setIsFetching={setIsFetching}
                 setError={setError}
+                query={query}
                 setQuery={setQuery}
+                handleQueryChange={handleQueryChange}
               />
 )}
           />
@@ -282,6 +286,16 @@ export default function App() {
           <div className="footer-content">
             <About />
             <Contact />
+            <HashLink
+              smooth
+              to="#top"
+            >
+              <div className="navFooterBackToTop">
+                <span className="navFooterBackToTopText">
+                  Back to top
+                </span>
+              </div>
+            </HashLink>
             <div id="final">
               <div className="final-text-div">
                 <h1 className="final-text">
