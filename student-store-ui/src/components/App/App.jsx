@@ -10,7 +10,9 @@ import ProductDetail from '../ProductDetail/ProductDetail';
 import NotFound from '../NotFound/NotFound';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
-import { API_URL } from '../../constants';
+import Purchases from '../Purchases/Purchases';
+import PurchaseDetail from '../PurchaseDetail/PurchaseDetail';
+import { API_URL, STORE_EXT } from '../../constants';
 import './App.css';
 
 export default function App() {
@@ -42,7 +44,7 @@ export default function App() {
   async function fetchAllProductData() {
     setIsFetching(true);
     try {
-      const { data } = await axios.get(API_URL);
+      const { data } = await axios.get(API_URL + STORE_EXT);
       console.log('productData ', data);
       const res = data.products;
       if (res.length > 0) {
@@ -62,7 +64,7 @@ export default function App() {
   async function sendPostRequest(body) {
     setIsFetching(true);
     try {
-      const resp = await axios.post(API_URL, body);
+      const resp = await axios.post(API_URL + STORE_EXT, body);
       console.log(resp.data);
       setPurchaseInfo(resp.data.purchase);
       setError('');
@@ -178,6 +180,7 @@ export default function App() {
 
   useEffect(() => {
     fetchAllProductData();
+    setQuery('');
   }, []);
 
   // **********************************************************************
@@ -248,6 +251,27 @@ export default function App() {
                 isFetching={isFetching}
                 setIsFetching={setIsFetching}
                 error={error}
+                setError={setError}
+              />
+)}
+          />
+          <Route
+            path="/purchases"
+            element={(
+              <Purchases
+                isFetching={isFetching}
+                setIsFetching={setIsFetching}
+                setError={setError}
+                setQuery={setQuery}
+              />
+)}
+          />
+          <Route
+            path="/purchases/:purchaseId"
+            element={(
+              <PurchaseDetail
+                isFetching={isFetching}
+                setIsFetching={setIsFetching}
                 setError={setError}
               />
 )}

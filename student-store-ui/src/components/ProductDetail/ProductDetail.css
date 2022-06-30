@@ -6,14 +6,3 @@
   margin-top: 130px;
   /* background-image: url("https://i.imgur.com/kXEcLHM.jpg"); */
   }
-
-.loading-wrapper {
-  height: 840px;
-}
-
-.loading-card {
-  position: fixed;
-  top: 45%;
-  left: 50.9%;
-  transform: translate(-50%, -50%);
-}

@@ -42,7 +42,7 @@ export default function CheckoutForm({
           {purchaseInfo.receipt.map((line) => {
             // weird key generation
             const lineArr = line.split(' ');
-            return <p key={lineArr[2] + lineArr[3]}>{`• ${line}`}</p>;
+            return <p key={lineArr[1]}>{`• ${line}`}</p>;
           })}
           <p key="price">{`• After taxes and fees were applied, your total comes out to ${purchaseInfo.total}`}</p>
           <p className="notification">We hope you shop with us again!</p>

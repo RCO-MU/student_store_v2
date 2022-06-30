@@ -4,6 +4,7 @@ const cors = require("cors")
 const bodyParser = require("body-parser");
 const { NotFoundError } = require("./utils/errors")
 const storeRoutes = require("./store-routes")
+const purchaseRoutes = require("./purchase-routes")
 
 // app setup with morgan, body-parser, and cors
 const app = express();
@@ -11,8 +12,9 @@ app.use(morgan("tiny"));
 app.use(bodyParser.json());
 app.use(cors())
 
-// set up /store routes
+// set up /store and /purchases routes
 app.use("/store", storeRoutes);
+app.use("/purchases", purchaseRoutes);
 
 // default get function (ping-pong)
 app.get("/", (req, res) => {
@@ -21,6 +23,7 @@ app.get("/", (req, res) => {
 
 // handle all 404 errors that weren't matched by a route
 app.use((req, res, next) => {
+    console.log('here');
     return next(new NotFoundError())
   })
 

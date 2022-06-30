@@ -1,0 +1,55 @@
+.purchases {
+  margin-top: 200px;
+  margin-left: 150px;
+  margin-bottom: 30px;
+  margin-right: 50px;
+  text-align: center;
+  padding: 15px;
+  background-color: rgb(254, 209, 154);
+  border-radius: 10px 10px;
+  min-width: fit-content;
+}
+
+.purchase-table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 0;
+}
+
+.header.id {
+  width: 10%;
+  border-radius: 0;
+}
+
+.header.name {
+  width: 40%;
+  border-radius: 0;
+}
+
+.header.email {
+  width: 40%;
+  border-radius: 0;
+}
+
+.header.total {
+  width: 10%;
+  border-radius: 0;
+}
+
+.item-cell.id {
+  font-size: xx-large;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.item-cell.name {
+  border-radius: 0;
+}
+
+.item-cell.email {
+  border-radius: 0;
+}
+
+.item-cell.total {
+  border-radius: 0;
+}

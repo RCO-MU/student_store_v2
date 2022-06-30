@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductView from '../ProductView/ProductView';
 import NotFound from '../NotFound/NotFound';
-import { API_URL } from '../../constants';
+import { API_URL, STORE_EXT } from '../../constants';
 import './ProductDetail.css';
+import '../../globals.css';
 
 export default function ProductDetail({
   shoppingCart, handleAddItemToCart, handleRemoveItemFromCart,
@@ -30,14 +31,14 @@ export default function ProductDetail({
   async function fetchProduct(id) {
     setIsFetching(true);
     try {
-      const { data } = await axios(`${API_URL}/${id}`);
+      const { data } = await axios(`${API_URL}${STORE_EXT}/${id}`);
       console.log('Product ', data);
       setProduct(data.product);
       setError('');
     } catch (err) {
       console.error(err);
       setProduct(undefined);
-      setError('invalid ID');
+      setError('product not found');
     }
     setIsFetching(false);
   }

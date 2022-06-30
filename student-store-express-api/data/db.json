@@ -145,5 +145,146 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Rafael",
+      "email": "e@e.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$0.99",
+      "tax": "$0.09",
+      "total": "$1.08",
+      "itemCount": 1,
+      "createdAt": "6/29/2022, 4:20:06 PM",
+      "receipt": [
+        "1x Rice Krispies - $0.99 each, $0.99 total"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Rafael",
+      "email": "rco@fb.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$4.49",
+      "tax": "$0.39",
+      "total": "$4.88",
+      "itemCount": 2,
+      "createdAt": "6/29/2022, 4:43:52 PM",
+      "receipt": [
+        "1x Cinnamon Rolls - $2.99 each, $2.99 total",
+        "1x Flamin Hot Cheetos - $1.50 each, $1.50 total"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Eafae",
+      "email": "raffycollado@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        },
+        {
+          "itemId": 10,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$60.46",
+      "tax": "$5.29",
+      "total": "$65.75",
+      "itemCount": 5,
+      "createdAt": "6/29/2022, 4:44:02 PM",
+      "receipt": [
+        "1x Rice Krispies - $0.99 each, $0.99 total",
+        "1x Flamin Hot Cheetos - $1.50 each, $1.50 total",
+        "1x Cinnamon Rolls - $2.99 each, $2.99 total",
+        "1x Bar Code Shirts - $19.99 each, $19.99 total",
+        "1x Alpaca Wool Scarf - $34.99 each, $34.99 total"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "wvet",
+      "email": "rco@fb.com",
+      "order": [
+        {
+          "itemId": 16,
+          "quantity": 1
+        },
+        {
+          "itemId": 11,
+          "quantity": 1
+        },
+        {
+          "itemId": 10,
+          "quantity": 1
+        }
+      ],
+      "subtotal": "$1,234.98",
+      "tax": "$108.06",
+      "total": "$1,343.04",
+      "itemCount": 3,
+      "createdAt": "6/29/2022, 4:44:10 PM",
+      "receipt": [
+        "1x Smart Glasses - $999.99 each, $999.99 total",
+        "1x Matching Rings - $200.00 each, $200.00 total",
+        "1x Alpaca Wool Scarf - $34.99 each, $34.99 total"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "richhhh",
+      "email": "richboi@rich.rich",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 25
+        },
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 16,
+          "quantity": 102
+        }
+      ],
+      "subtotal": "$102,037.47",
+      "tax": "$8,928.28",
+      "total": "$110,965.75",
+      "itemCount": 128,
+      "createdAt": "6/29/2022, 4:47:06 PM",
+      "receipt": [
+        "25x Flamin Hot Cheetos - $1.50 each, $37.50 total",
+        "1x Rice Krispies - $0.99 each, $0.99 total",
+        "102x Smart Glasses - $999.99 each, $101,998.98 total"
+      ]
+    }
+  ]
 }

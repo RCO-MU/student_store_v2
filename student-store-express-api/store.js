@@ -23,6 +23,12 @@ class Store {
         return storage.get('purchases').value();
     }
 
+    // gets purchase with matching purchaseId from database
+    static async getPurchase(purchaseId) {
+        const purchases = await this.getAllPurchases();
+        return purchases.find(item => item.id === purchaseId);
+    }
+
     // currency formatter
     static #formatPrice(price) {
         const formatter = new Intl.NumberFormat('en-US', {

@@ -1,5 +1,11 @@
 // API URL
-export const API_URL = 'http://localhost:3001/store';
+export const API_URL = 'http://localhost:3001';
+
+// store endpoint
+export const STORE_EXT = '/store';
+
+// purchase endpoint
+export const PURCHASE_EXT = '/purchases';
 
 // sample item 1 (testing)
 export const sampleItem = {
