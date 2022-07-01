@@ -25,9 +25,9 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 - [X] User can click in the top navigation bar to scroll to the relevant section.
 - [X] User sees a "not found" display when searching for a nonexistent product.
-- [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
-- [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
-- [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [X] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
+- [X] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
+- [X] Allow users to use an input to filter orders by the email of the person who placed the order.
 
 ### Passing Automated Tests
 
@@ -242,42 +242,42 @@ The following specifications were met on the Express backend and the React front
         - [X] The `checkoutForm` should be reset to its default state.
 
 **Server** - Create an Express server
-  - [ ] Wire up the appropriate middleware and error handlers in the `app.js` file
-  - [ ] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
-  - [ ] Have a `server.js` file that starts the app by listening on port `3001`.
+  - [X] Wire up the appropriate middleware and error handlers in the `app.js` file
+  - [X] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
+  - [X] Have a `server.js` file that starts the app by listening on port `3001`.
 
 **Models** - The API should use a `Store` model that handles the following
-  - [ ] List all products currently in the `db.json` file
-  - [ ] Fetch a single product by its id
-  - [ ] Create a purchase order
+  - [X] List all products currently in the `db.json` file
+  - [X] Fetch a single product by its id
+  - [X] Create a purchase order
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
-  - [ ] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
-  - [ ] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
-  - [ ] It should allow `POST` requests to the `/store` endpoint:
-    - [ ] The endpoint should create purchase orders for users and save them to the `db.json` file
-    - [ ] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
-      - [ ] The `shoppingCart` field should contain the user's order.
-        - [ ] This should be an array of objects.
-        - [ ] Each object in the array should have two fields:
-          <!-- - [ ] The `item` field should store an object of the item being purchased -->
-          - [ ] The `itemId` field should store the `id` of the item being purchased
-          - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
-      - [ ] The `user` field should contain the name and email of the person placing the order.
-      - [ ] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
-      - [ ] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
-      - [ ] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
-      - [ ] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
+  - [X] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
+  - [X] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
+  - [X] It should allow `POST` requests to the `/store` endpoint:
+    - [X] The endpoint should create purchase orders for users and save them to the `db.json` file
+    - [X] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
+      - [X] The `shoppingCart` field should contain the user's order.
+        - [X] This should be an array of objects.
+        - [X] Each object in the array should have two fields:
+          <!-- - [X] The `item` field should store an object of the item being purchased -->
+          - [X] The `itemId` field should store the `id` of the item being purchased
+          - [X] The `quantity` field should store a number representing how many of that item the user is purchasing.
+      - [X] The `user` field should contain the name and email of the person placing the order.
+      - [X] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
+      - [X] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
+      - [X] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
+      - [X] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
         - **required**:
-          - [ ] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
-          - [ ] `name` - the name of the user making the purchase
-          - [ ] `email` - the email of the user making the purchase
-          - [ ] `order` - the `shoppingCart` value sent in the `POST` request
-          - [ ] `total` - the calculated total of the order
-          - [ ] `createdAt` - a string representation of the date and time when the order was placed
+          - [X] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
+          - [X] `name` - the name of the user making the purchase
+          - [X] `email` - the email of the user making the purchase
+          - [X] `order` - the `shoppingCart` value sent in the `POST` request
+          - [X] `total` - the calculated total of the order
+          - [X] `createdAt` - a string representation of the date and time when the order was placed
         - **optional**:
-          - [ ] `receipt` - text describing the order (what might go on a receipt)
-      - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+          - [X] `receipt` - text describing the order (what might go on a receipt)
+      - [X] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
 
 ---
 
@@ -285,20 +285,35 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of things
+unexplained with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
+`axios` very quickly, it seemed many people around me had trouble with it. I also think that way more CSS properties should be shown and taught. I wish that some of the backend template files given to us like server.js and storage.js were also explained more thoroughly.
+
+On a different note, I also had an issue with the inconsistency of project core/stretch requirements across the Unit 2 Assignment page, the 
+example deployed student store, and the readme. I was mostly following the section "Components and their expected functionality" from the 
+webpage, only to realize the above "Goals" section highlighted much different core and stretch functionality, namely product filtering 
+and shopping cart +/- buttons. Then, the template readme not only lists later requirements for the 3rd week of the project, but also points out 
+the Navbar buttons to scroll to relevant sections, which are in the demo website, but never mentioned as a deliverable on the Unit 2 Assignment 
+page. This is all to say I found the goals of the 1st part of the assignment were somewhat unclear. However, I found that the second part was much clearer with expectations.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I was able to implement some extra features I didn't get the chance to do on the first part like a cart button, more navigation buttons, and extra sidebar options, but didn't get to do the following:
+
+- On the `/products` page:
+    - A more interesting background (color/pattern)
+    - A display of suggested products based on the previous page's search information
+- On the homepage: 
+    - User can hover over a product card to display either the item description, or a larger version of the product image
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+N/A
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shoutout Arisa, Preeti, Robert, and Christina for being a dope moral support group. Phineas and Yilika are GOATs and I will miss them very dearly.
