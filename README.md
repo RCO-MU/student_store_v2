@@ -283,22 +283,28 @@ The following specifications were met on the Express backend and the React front
 
 ### Reflection
 
-* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did 
+you feel unprepared to complete?
 
-The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of things
-unexplained with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I picked up 
-`axios` very quickly, it seemed many people around me had trouble with it. I also think that way more CSS properties should be shown and taught. I wish that some of the backend template files given to us like server.js and storage.js were also explained more thoroughly.
+The labs were incredibly useful to learn the basics of React and were a great resource for this project. However, there were a lot of 
+things unexplained with the components in `react-router-dom` that I felt should have been shown before this assignment. Even though I 
+picked up `axios` very quickly, it seemed many people around me had trouble with it. I also think that way more CSS properties should be 
+shown and taught. I wish that some of the backend template files given to us like server.js and storage.js were also explained more 
+thoroughly.
 
-On a different note, I also had an issue with the inconsistency of project core/stretch requirements across the Unit 2 Assignment page, the 
-example deployed student store, and the readme. I was mostly following the section "Components and their expected functionality" from the 
-webpage, only to realize the above "Goals" section highlighted much different core and stretch functionality, namely product filtering 
-and shopping cart +/- buttons. Then, the template readme not only lists later requirements for the 3rd week of the project, but also points out 
-the Navbar buttons to scroll to relevant sections, which are in the demo website, but never mentioned as a deliverable on the Unit 2 Assignment 
-page. This is all to say I found the goals of the 1st part of the assignment were somewhat unclear. However, I found that the second part was much clearer with expectations.
+On a different note, I also had an issue with the inconsistency of project core/stretch requirements across the Unit 2 Assignment page, 
+the example deployed student store, and the readme. I was mostly following the section "Components and their expected functionality" from 
+the webpage, only to realize the above "Goals" section highlighted much different core and stretch functionality, namely product 
+filtering and shopping cart +/- buttons. Then, the template readme not only lists later requirements for the 3rd week of the project, but 
+also points out the Navbar buttons to scroll to relevant sections, which are in the demo website, but never mentioned as a deliverable on 
+the Unit 2 Assignment page. This is all to say I found the goals of the 1st part of the assignment were somewhat unclear. However, I 
+found that the second part was much clearer with expectations.
 
-* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project 
+responded to a particular event, etc.
   
-I was able to implement some extra features I didn't get the chance to do on the first part like a cart button, more navigation buttons, and extra sidebar options, but didn't get to do the following:
+I was able to implement some extra features I didn't get the chance to do on the first part like a cart button, more navigation buttons, 
+and extra sidebar options, but didn't get to do the following:
 
 - On the `/products` page:
     - A more interesting background (color/pattern)
@@ -306,7 +312,12 @@ I was able to implement some extra features I didn't get the chance to do on the
 - On the homepage: 
     - User can hover over a product card to display either the item description, or a larger version of the product image
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your 
+peer did that you would like to try next time?
+
+
+https://user-images.githubusercontent.com/73001297/176950149-9a760af2-6f77-4e98-bb84-800ee0eee370.mp4
+
 
 I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
