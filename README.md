@@ -318,6 +318,7 @@ peer did that you would like to try next time?
 
 https://user-images.githubusercontent.com/73001297/176950149-9a760af2-6f77-4e98-bb84-800ee0eee370.mp4
 
+Link to high-quality version (only accesible by Meta employees): https://drive.google.com/file/d/1lndF2VZXL32Fiz_hBWNi1g_ITzX7kdpM/view?usp=sharing
 
 I think my demo is very seamless and I'm super proud of the finished UI and with how much I learned from the first project to now.
 
